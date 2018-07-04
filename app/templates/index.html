@@ -15,37 +15,37 @@
         <form action="" method="post" name="compute">
             {{ form.hidden_tag() }}
             <p>
-                {{ form.t1.label }} {{ form.t1() }} {% for error in form.t1.errors %}
+                {{ form.t1.label }} {{ form.t1(autocomplete='off') }} {% for error in form.t1.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.t2.label }} {{ form.t2() }} {% for error in form.t2.errors %}
+                <br> {{ form.t2.label }} {{ form.t2(autocomplete='off') }} {% for error in form.t2.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.t3.label }} {{ form.t3() }} {% for error in form.t3.errors %}
+                <br> {{ form.t3.label }} {{ form.t3(autocomplete='off') }} {% for error in form.t3.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.t4.label }} {{ form.t4() }} {% for error in form.t4.errors %}
+                <br> {{ form.t4.label }} {{ form.t4(autocomplete='off') }} {% for error in form.t4.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.t5.label }} {{ form.t5() }} {% for error in form.t5.errors %}
+                <br> {{ form.t5.label }} {{ form.t5(autocomplete='off') }} {% for error in form.t5.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.fl.label }} {{ form.fl() }} {% for error in form.fl.errors %}
+                <br> {{ form.fl.label }} {{ form.fl(autocomplete='off') }} {% for error in form.fl.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
                 <br>
-                <br> {{ form.hw.label }} {{ form.hw() }} {% for error in form.hw.errors %}
+                <br> {{ form.hw.label }} {{ form.hw(autocomplete='off') }} {% for error in form.hw.errors %}
                 <span style="color:red;">[{{ error }}]</span>
                 {% endfor %}
 
