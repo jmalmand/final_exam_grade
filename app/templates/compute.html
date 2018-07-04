@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block content %}
+<div>
+    <p>
+        Your current average is {{ data.avg }}%
+<br>
+        Average on remaining assessments to obtain 94%: {{ data.for_a }}%
+    </p>
+</div>
+{% endblock content %}
