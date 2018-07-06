@@ -2,12 +2,16 @@
 
 <body>
 
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-    <div class="alert alert-danger">{{ message }}</div>
-    {% endfor %} {% endif %} {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %} 
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %} 
+        {% endif %} 
+    {% endwith %}
 
     <h1>Grader</h1>
-    <div class="container" style="margin-right: 1000">
+    <div class="container">
         <form action="" method="post" name="compute">
             {{ form.hidden_tag() }}
             <div class="form-group row">
