@@ -2,57 +2,67 @@
 
 <body>
 
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-danger">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
 
     <h1>Grader</h1>
-    <div class="form-group">
+    <div class="container" style="margin-right: 1000">
         <form action="" method="post" name="compute">
             {{ form.hidden_tag() }}
-            <p>
-                {{ form.t1.label }} {{ form.t1(autocomplete='off') }} {% for error in form.t1.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.t1.label }}</div>
+                <div class="col-sm-2">{{ form.t1(autocomplete='off') }}</div>
+                {% for error in form.t1.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.t2.label }} {{ form.t2(autocomplete='off') }} {% for error in form.t2.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.t2.label }}</div>
+                <div class="col-sm-2">{{ form.t2(autocomplete='off') }}</div>
+                {% for error in form.t2.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.t3.label }} {{ form.t3(autocomplete='off') }} {% for error in form.t3.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.t3.label }}</div>
+                <div class="col-sm-2">{{ form.t3(autocomplete='off') }}</div>
+                {% for error in form.t3.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.t4.label }} {{ form.t4(autocomplete='off') }} {% for error in form.t4.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.t4.label }}</div>
+                <div class="col-sm-2">{{ form.t4(autocomplete='off') }}</div>
+                {% for error in form.t4.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.t5.label }} {{ form.t5(autocomplete='off') }} {% for error in form.t5.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.t5.label }}</div>
+                <div class="col-sm-2">{{ form.t5(autocomplete='off') }}</div>
+                {% for error in form.t5.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.fl.label }} {{ form.fl(autocomplete='off') }} {% for error in form.fl.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.fl.label }}</div>
+                <div class="col-sm-2">{{ form.fl(autocomplete='off') }}</div>
+                {% for error in form.fl.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-                <br>
-                <br> {{ form.hw.label }} {{ form.hw(autocomplete='off') }} {% for error in form.hw.errors %}
-                <span style="color:red;">[{{ error }}]</span>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-1">{{ form.hw.label }}</div>
+                <div class="col-sm-2">{{ form.hw(autocomplete='off') }}</div>
+                {% for error in form.hw.errors %}
+                <span style="color:red" class="col">[{{ error }}]</span>
                 {% endfor %}
-
-            </p>
-            <p>
+            </div>
+            <div class="form-group row">
                 {{ form.submit() }}
-            </p>
+            </div>
+
         </form>
     </div>
 

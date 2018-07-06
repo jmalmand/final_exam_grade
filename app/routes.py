@@ -33,8 +33,11 @@ def index():
         for_a = ((94 * 7) - sum(numbers))/ (7 - len(numbers))
         for_a = round(for_a, 2)
 
+        for_a_minus = ((90 * 7) - sum(numbers)) / (7 - len(numbers))
+        for_a_minus = round(for_a_minus, 2)
 
-        data = {'avg': avg, 'for_a': for_a}
+
+        data = {'avg': avg, 'for_a': for_a, 'for_a_minus': for_a_minus}
 
             
 

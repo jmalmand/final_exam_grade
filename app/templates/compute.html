@@ -2,8 +2,25 @@
 <div>
     <p>
         Your current average is {{ data.avg }}%
-<br>
-        Average on remaining assessments to obtain 94%: {{ data.for_a }}%
     </p>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Desired Score</th>
+                <th scope="col">Average on remaining assessments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">94%</th>
+                <td>{{ data.for_a }}</th>
+            </tr>
+            <tr>
+                <th scope="row">90%</th>
+                <td>{{ data.for_a_minus }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 {% endblock content %}
