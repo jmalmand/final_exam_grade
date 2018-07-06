@@ -23,13 +23,17 @@ def index():
                 pass
 
         if sum(numbers) == 0:
-            flash("Enter at least one grade greater than 0.")
+            flash("Enter at least one grade greater than 0.", "danger")
             return redirect(url_for('index'))
-            
+
 
         avg = sum(numbers) / numbers_entered
         avg = round(avg, 2)
-    
+
+        if numbers_entered == 7:
+            flash(f"Your course average is {avg}.", "success")
+            return redirect(url_for('index'))
+            
         for_a = ((100 * 7) - sum(numbers))/ (7 - len(numbers))
         for_a = round(for_a, 2)
 
