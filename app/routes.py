@@ -30,14 +30,25 @@ def index():
         avg = sum(numbers) / numbers_entered
         avg = round(avg, 2)
     
-        for_a = ((94 * 7) - sum(numbers))/ (7 - len(numbers))
+        for_a = ((100 * 7) - sum(numbers))/ (7 - len(numbers))
         for_a = round(for_a, 2)
 
         for_a_minus = ((90 * 7) - sum(numbers)) / (7 - len(numbers))
         for_a_minus = round(for_a_minus, 2)
 
+        for_b = ((80 * 7) - sum(numbers))/ (7 - len(numbers))
+        for_b = round(for_b, 2)
 
-        data = {'avg': avg, 'for_a': for_a, 'for_a_minus': for_a_minus}
+        for_c = ((70 * 7) - sum(numbers))/ (7 - len(numbers))
+        for_c = round(for_c, 2)
+
+        for_d = ((60 * 7) - sum(numbers))/ (7 - len(numbers))
+        for_d = round(for_d, 2)
+
+        data = {'avg': avg, 'for_a': for_a, 'for_a_minus': for_a_minus,
+                'for_b': for_b,
+                'for_c': for_c,
+                'for_d': for_d}
 
             
 
