@@ -31,7 +31,7 @@ def index():
         avg = round(avg, 2)
 
         if numbers_entered == 7:
-            flash(f"Your course average is {avg}.", "success")
+            flash(f"Your course average is {avg}. Leave a grade empty to view average required to obtain a particular grade.", "success")
             return redirect(url_for('index'))
             
         for_a = ((100 * 7) - sum(numbers))/ (7 - len(numbers))
