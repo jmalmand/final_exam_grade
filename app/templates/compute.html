@@ -1,19 +1,22 @@
 {% extends "base.html" %} {% block content %}
 <div>
     <p>
-        Your current average is {{ data.avg }}%
+        Your current average is {{ data.avg }}%.
+    </p>
+    <p>
+        Your dropped grade is a {{ data.min_grade }}%.
     </p>
 
     <table class="table table-sm">
         <thead>
             <tr>
-                <th scope="col">Desired Score</th>
-                <th scope="col">Average on remaining assessments</th>
+                <th scope="col">Desired Grade</th>
+                <th scope="col">Grade on Final</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">100%</th>
+                <th scope="row">94%</th>
                 <td>{{ data.for_a }}</td>
             </tr>
             <tr>

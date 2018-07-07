@@ -10,46 +10,45 @@ def index():
     if form.validate_on_submit():
 
         numbers = []
-        numbers_entered = 0
-
 
         for field in form:
             try:
                 field_data = field.data
                 if isinstance(field_data, Decimal):
-                    numbers_entered += 1
                     numbers.append(field_data)
             except Exception:
                 pass
 
-        if sum(numbers) == 0:
-            flash("Enter at least one grade greater than 0.", "danger")
+        if len(numbers) < 6:
+            flash("Check to make sure that all grades were entered", "danger")
             return redirect(url_for('index'))
 
 
-        avg = sum(numbers) / numbers_entered
-        avg = round(avg, 2)
+        avg = sum(numbers) / 6
+        avg = round(avg, 0)
 
-        if numbers_entered == 7:
-            flash(f"Your course average is {avg}. Leave a grade empty to view average required to obtain a particular grade.", "success")
-            return redirect(url_for('index'))
-            
-        for_a = ((100 * 7) - sum(numbers))/ (7 - len(numbers))
-        for_a = round(for_a, 2)
 
-        for_a_minus = ((90 * 7) - sum(numbers)) / (7 - len(numbers))
-        for_a_minus = round(for_a_minus, 2)
+        min_grade = min(numbers[0:5])
 
-        for_b = ((80 * 7) - sum(numbers))/ (7 - len(numbers))
-        for_b = round(for_b, 2)
+        for_a = ((94 * 6) - sum(numbers) + min_grade)
+        for_a = round(for_a, 0)
 
-        for_c = ((70 * 7) - sum(numbers))/ (7 - len(numbers))
-        for_c = round(for_c, 2)
+        for_a_minus = ((90 * 6) - sum(numbers) + min_grade)
+        for_a_minus = round(for_a_minus, 0)
 
-        for_d = ((60 * 7) - sum(numbers))/ (7 - len(numbers))
-        for_d = round(for_d, 2)
+        for_b = ((80 * 6) - sum(numbers) + min_grade)
+        for_b = round(for_b, 0)
 
-        data = {'avg': avg, 'for_a': for_a, 'for_a_minus': for_a_minus,
+        for_c = ((70 * 6) - sum(numbers) + min_grade)
+        for_c = round(for_c, 0)
+
+        for_d = ((60 * 6) - sum(numbers) + min_grade)
+        for_d = round(for_d, 0)
+
+        data = {'avg': avg, 
+                'min_grade': min_grade,
+                'for_a': for_a,
+                'for_a_minus': for_a_minus,
                 'for_b': for_b,
                 'for_c': for_c,
                 'for_d': for_d}
