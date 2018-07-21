@@ -14,45 +14,45 @@
         <form action="" method="post" name="compute">
             {{ form.hidden_tag() }}
             <div class="form-group row">
-                <div class="col-sm-1">{{ form.t1.label }}</div>
+                <div class="col-sm-2">{{ form.t1.label }}</div>
                 <div class="col-sm-2">{{ form.t1(autocomplete='off') }}</div>
                 {% for error in form.t1.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="form-group row">
-                <div class="col-sm-1">{{ form.t2.label }}</div>
+                <div class="col-sm-2">{{ form.t2.label }}</div>
                 <div class="col-sm-2">{{ form.t2(autocomplete='off') }}</div>
                 {% for error in form.t2.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="form-group row">
-                <div class="col-sm-1">{{ form.t3.label }}</div>
+                <div class="col-sm-2">{{ form.t3.label }}</div>
                 <div class="col-sm-2">{{ form.t3(autocomplete='off') }}</div>
                 {% for error in form.t3.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="form-group row">
-                <div class="col-sm-1">{{ form.t4.label }}</div>
+                <div class="col-sm-2">{{ form.t4.label }}</div>
                 <div class="col-sm-2">{{ form.t4(autocomplete='off') }}</div>
                 {% for error in form.t4.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="form-group row">
-                <div class="col-sm-1">{{ form.t5.label }}</div>
+                <div class="col-sm-2">{{ form.t5.label }}</div>
                 <div class="col-sm-2">{{ form.t5(autocomplete='off') }}</div>
                 {% for error in form.t5.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
            <div class="form-group row">
-                <div class="col-sm-1">{{ form.hw.label }}</div>
+                <div class="col-sm-2">{{ form.hw.label }}</div>
                 <div class="col-sm-2">{{ form.hw(autocomplete='off') }}</div>
                 {% for error in form.hw.errors %}
-                <span class="col error">{{ error }}</span>
+                <span class="col-sm-2">{{ error }}</span>
                 {% endfor %}
             </div>
             <div class="form-group row">
