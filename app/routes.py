@@ -3,6 +3,8 @@ from app import app
 from app.forms import ComputeForm
 from decimal import Decimal
 
+from app.logic import calculate_grade_data
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -23,37 +25,7 @@ def index():
             flash("Check to make sure that all grades were entered", "danger")
             return redirect(url_for('index'))
 
-
-        avg = sum(numbers) / 6
-        avg = round(avg, 0)
-
-
-        min_grade = min(numbers[0:5])
-
-        for_a = ((94 * 6) - sum(numbers) + min_grade)
-        for_a = round(for_a, 0)
-
-        for_a_minus = ((90 * 6) - sum(numbers) + min_grade)
-        for_a_minus = round(for_a_minus, 0)
-
-        for_b = ((80 * 6) - sum(numbers) + min_grade)
-        for_b = round(for_b, 0)
-
-        for_c = ((70 * 6) - sum(numbers) + min_grade)
-        for_c = round(for_c, 0)
-
-        for_d = ((60 * 6) - sum(numbers) + min_grade)
-        for_d = round(for_d, 0)
-
-        data = {'avg': avg, 
-                'min_grade': min_grade,
-                'for_a': for_a,
-                'for_a_minus': for_a_minus,
-                'for_b': for_b,
-                'for_c': for_c,
-                'for_d': for_d}
-
-            
+        data = calculate_grade_data(numbers)
 
         return render_template('compute.html', data=data)
     return render_template('index.html', form=form)

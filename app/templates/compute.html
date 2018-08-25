@@ -1,39 +1,58 @@
 {% extends "base.html" %} {% block content %}
 <div>
-    <p>
-        Your current average is {{ data.avg }}%.
-    </p>
-    <p>
-        Your dropped grade is a {{ data.min_grade }}%.
-    </p>
+    <p>The following table shows the relationship between the grade that must be earned on the final to obtain the desired course grade:</p>
 
-    <table class="table table-sm">
+    <table class="table table-sm" style="text-align:center;">
         <thead>
             <tr>
-                <th scope="col">Desired Grade</th>
-                <th scope="col">Grade on Final</th>
+                <th scope="col">Desired Course Grade</th>
+                <th scope="col">Score on Final to Obtain Desired Grade</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">94%</th>
+                <th scope="row">A</th>
                 <td>{{ data.for_a }}</td>
             </tr>
             <tr>
-                <th scope="row">90%</th>
+                <th scope="row">A-</th>
                 <td>{{ data.for_a_minus }}</td>
             </tr>
             <tr>
-                <th scope="row">80%</th>
+                <th scope="row">B+</th>
+                <td>{{ data.for_b_plus }}</td>
+            </tr>
+            <tr>
+                <th scope="row">B</th>
                 <td>{{ data.for_b }}</td>
             </tr>
             <tr>
-                <th scope="row">70%</th>
+                <th scope="row">B-</th>
+                <td>{{ data.for_b_minus }}</td>
+            </tr>
+            <tr>
+                <th scope="row">C+</th>
+                <td>{{ data.for_c_plus }}</td>
+            </tr>
+            <tr>
+                <th scope="row">C</th>
                 <td>{{ data.for_c }}</td>
             </tr>
             <tr>
-                <th scope="row">60%</th>
+                <th scope="row">C-</th>
+                <td>{{ data.for_c_minus }}</td>
+            </tr>
+            <tr>
+                <th scope="row">D+</th>
+                <td>{{ data.for_d_plus }}</td>
+            </tr>
+            <tr>
+                <th scope="row">D</th>
                 <td>{{ data.for_d }}</td>
+            </tr>
+            <tr>
+                <th scope="row">D-</th>
+                <td>{{ data.for_d_minus }}</td>
             </tr>
         </tbody>
     </table>
