@@ -32,7 +32,3 @@ def calculate_grade_data(numbers):
                 data[key] = "-"               
 
     return data
-
-data = [100, 90, 80, 70, 60, 100]
-
-print(calculate_grade_data(data))
