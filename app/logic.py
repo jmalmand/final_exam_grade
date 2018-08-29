@@ -20,6 +20,7 @@ def calculate_grade_data(numbers):
             'for_d_plus' : calculate_required_grade(numbers, 67),
             'for_d':       calculate_required_grade(numbers, 64),
             'for_d_minus': calculate_required_grade(numbers, 60),
+            'avg': round(sum(numbers) / len(numbers), 2)
             }
 
     done = False
