@@ -15,54 +15,54 @@
             {{ form.hidden_tag() }}
             <div class="form-group">
                 {{ form.t1.label }}
-                {{ form.t1(autocomplete='off', class="form-control") }}
-                {% for error in form.t1.errors %}
-                <p class="error">{{ error }}</p>
-                {% endfor %}
+                {{ form.t1(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.t1.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
             <div class="form-group">
                 {{ form.t2.label }}
-                {{ form.t2(autocomplete='off', class="form-control") }}
-                {% for error in form.t2.errors %}
-                <span class="error">{{ error }}</span>
-                {% endfor %}
+                {{ form.t2(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.t2.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
             <div class="form-group">
                 {{ form.t3.label }}
-                {{ form.t3(autocomplete='off', class="form-control") }}
-                {% for error in form.t2.errors %}
-                <span class="error">{{ error }}</span>
-                {% endfor %}
+                {{ form.t3(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.t3.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
             <div class="form-group">
                 {{ form.t4.label }}
-                {{ form.t4(autocomplete='off', class="form-control") }}
-                {% for error in form.t2.errors %}
-                <span class="error">{{ error }}</span>
-                {% endfor %}
+                {{ form.t4(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.t4.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
             <div class="form-group">
                 {{ form.t5.label }}
-                {{ form.t5(autocomplete='off', class="form-control") }}
-                {% for error in form.t5.errors %}
-                <span class="error">{{ error }}</span>
-                {% endfor %}
+                {{ form.t5(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.t5.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
            <div class="form-group">
                 {{ form.hw.label }}
-                {{ form.hw(autocomplete='off', class="form-control") }}
-                {% for error in form.t2.errors %}
-                <span class="error">{{ error }}</span>
-                {% endfor %}
+                {{ form.hw(autocomplete='off', class="form-control", type="number", pattern="[0-9.]*") }}
+                {% if form.hw.errors %}
+                <p class="error">Please enter a score</p>
+                {% endif %}
             </div>
 
             <div class="form-group">
-                {{ form.submit(class="form-control") }}
+                {{ form.submit(class="btn btn-primary") }}
             </div>
 
         </form>
