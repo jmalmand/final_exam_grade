@@ -3,12 +3,15 @@ from app import app
 from app.forms import ComputeForm
 from decimal import Decimal
 
-from app.logic import calculate_grade_data
+from app.logic import calculate_grade_data, make_chart
+
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
     form = ComputeForm()
+
+    # Perform action on form submission
     if form.validate_on_submit():
 
         numbers = []
@@ -21,13 +24,19 @@ def index():
             except Exception:
                 pass
 
+        # Display errors and reload index
         if len(numbers) < 6:
             flash("Check to make sure that all grades were entered", "danger")
             return redirect(url_for('index'))
 
-        data = calculate_grade_data(numbers)
+        # Prepare chart of current scores
+        script, div = make_chart(numbers)
 
-        return render_template('compute.html', data=data)
+        # Perform calculation for final grade
+        data = calculate_grade_data(numbers)
+        
+        return render_template('compute.html', data=data, the_div=div, the_script=script)
+
     return render_template('index.html', form=form)
 
 
