@@ -1,70 +1,84 @@
 {% extends "base.html" %} {% block content %}
 <div>
-    <h4>Current Scores</h4>
 
-    {{ the_div|safe }}
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
-    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.1.min.js"></script>
-    {{ the_script|safe }}
+    <div class="chart-holder">
+        <h4>Current Average</h4>
+        Your current average is {{ data.avg }}%.
+    </div>
+    <p></p>
+    <div class="chart-holder">
+        <h4>Current Scores</h4>
 
-    <p>Your current average is {{ data.avg }}%.</p>
+        {{ the_div|safe }}
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.1.min.js"></script>
+        <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.1.min.js"></script>
+        {{ the_script|safe }}
+    </div>
 
-    <h4>Calculations for Final</h4>
-    <p>The following table shows the relationship between the grade that must be earned on the final to obtain the desired course grade:</p>
+    <p></p>
 
-    <table class="table table-sm" style="text-align:center;">
-        <thead>
-            <tr>
-                <th scope="col">Desired Course Grade</th>
-                <th scope="col">Score on Final to Obtain Desired Grade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">A</th>
-                <td>{{ data.for_a }}</td>
-            </tr>
-            <tr>
-                <th scope="row">A-</th>
-                <td>{{ data.for_a_minus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">B+</th>
-                <td>{{ data.for_b_plus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">B</th>
-                <td>{{ data.for_b }}</td>
-            </tr>
-            <tr>
-                <th scope="row">B-</th>
-                <td>{{ data.for_b_minus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">C+</th>
-                <td>{{ data.for_c_plus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">C</th>
-                <td>{{ data.for_c }}</td>
-            </tr>
-            <tr>
-                <th scope="row">C-</th>
-                <td>{{ data.for_c_minus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">D+</th>
-                <td>{{ data.for_d_plus }}</td>
-            </tr>
-            <tr>
-                <th scope="row">D</th>
-                <td>{{ data.for_d }}</td>
-            </tr>
-            <tr>
-                <th scope="row">D-</th>
-                <td>{{ data.for_d_minus }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="chart-holder">
+        
+
+        <h4>Calculations for Final</h4>
+        <p>The following table shows the relationship between the grade that must be earned on the final to obtain the
+            desired course grade:</p>
+
+        <table class="table table-sm" style="text-align:center;">
+            <thead>
+                <tr>
+                    <th scope="col">Desired Course Grade</th>
+                    <th scope="col">Score on Final to Obtain Desired Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">A</th>
+                    <td>{{ data.for_a }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">A-</th>
+                    <td>{{ data.for_a_minus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">B+</th>
+                    <td>{{ data.for_b_plus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">B</th>
+                    <td>{{ data.for_b }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">B-</th>
+                    <td>{{ data.for_b_minus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">C+</th>
+                    <td>{{ data.for_c_plus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">C</th>
+                    <td>{{ data.for_c }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">C-</th>
+                    <td>{{ data.for_c_minus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">D+</th>
+                    <td>{{ data.for_d_plus }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">D</th>
+                    <td>{{ data.for_d }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">D-</th>
+                    <td>{{ data.for_d_minus }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p></p>
 </div>
 {% endblock content %}

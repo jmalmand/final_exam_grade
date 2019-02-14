@@ -1,11 +1,35 @@
 body {
-  background: #fafafa;
+  background: #F1EEEA;
   color: #333333;
   margin-top: 5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+
+.login-holder {
+    max-width: 300px;
+    box-shadow: 0 0 12px #9E9E9E;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.loginbox {
+  width: 100%;
+  padding: 1.2rem 1.2rem;
+  overflow-x: hidden;
+  background: #fcfcfc;
+  background-size: 100% 100%;
+  border-radius: 8px;
+}
+
+.chart-holder {
+  max-width: 350px;
+  padding: 1.2rem 1.2rem;
+  box-shadow: 0 0 12px #9E9E9E;
+  overflow-y: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #fcfcfc;
 }
 
 .error {
@@ -13,10 +37,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 10pt;
   vertical-align: bottom;
   margin: 0;
-}
-
-.bg-steel {
-  background-color: #5f788a;
 }
 
 .site-header .navbar .nav-link {
