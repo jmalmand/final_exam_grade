@@ -30,12 +30,14 @@ def index():
             return redirect(url_for('index'))
 
         # Prepare chart of current scores
-        script, div = make_chart(numbers)
+        # script, div = make_chart(numbers)
 
         # Perform calculation for final grade
         data = calculate_grade_data(numbers)
         
-        return render_template('compute.html', data=data, the_div=div, the_script=script)
+        # Return statement for chart
+        # return render_template('compute.html', data=data, the_div=div, the_script=script)
+        return render_template('compute.html', data=data)
 
     return render_template('index.html', form=form)
 
