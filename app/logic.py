@@ -27,7 +27,7 @@ def calculate_grade_data(numbers):
     for key in data.keys():
         if data[key] <= 0:
             if not done:
-                data[key] = "Minimum Grade Possible"
+                data[key] = "0"
                 done = True
             else:
                 data[key] = "-"               
