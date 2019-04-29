@@ -33,33 +33,3 @@ def calculate_grade_data(numbers):
                 data[key] = "-"               
 
     return data
-
-def make_chart(scores):
-    # Bokeh Libraries
-    from bokeh.plotting import figure, show
-    from bokeh.embed import components
-
-    assessment_names = ['T1', 'T2', 'T3', 'T4', 'T5', 'HW']
-    scores = [float(score) for score in scores]
-    avg = round(sum(scores) / len(scores), 2) 
-
-    # Create chart
-    chart = figure(title='Scores',
-                x_range=assessment_names,
-                plot_height=300, plot_width=300,        # TODO Make plot responsive
-                y_minor_ticks=4,
-                toolbar_location=None)
-
-    # Draw vertical bars representing the assessment scores
-    chart.vbar(x=assessment_names, top=scores, width=0.75, color='#007BFF')
-
-    # Draw line representing assessment average
-    chart.line(x=range(len(scores)+1), y=avg, color='red')
-
-    # Modify properties of chart
-    chart.xgrid.grid_line_color = None
-    chart.y_range.start = 0
-    chart.y_range.end = 100
-
-    # return plot
-    return components(chart)

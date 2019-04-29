@@ -3,12 +3,19 @@ from app import app
 from app.forms import ComputeForm
 from decimal import Decimal
 
-from app.logic import calculate_grade_data, make_chart
+from app.logic import calculate_grade_data
+
+
 
 
 @app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index')
 def index():
+    return render_template('index.html')
+
+
+@app.route('/college_algebra', methods=['GET', 'POST'])
+def college_algebra():
     form = ComputeForm()
 
     # Perform action on form submission
@@ -27,7 +34,7 @@ def index():
         # Display errors and reload index
         if len(numbers) < 6:
             flash("Check to make sure that all grades were entered", "danger")
-            return redirect(url_for('index'))
+            return redirect(url_for('college_algebra'))
 
         # Prepare chart of current scores
         # script, div = make_chart(numbers)
@@ -39,13 +46,17 @@ def index():
         # return render_template('compute.html', data=data, the_div=div, the_script=script)
         return render_template('compute.html', data=data)
 
-    return render_template('index.html', form=form)
+    return render_template('college_algebra.html', form=form, title="College Algebra")
 
 
 @app.route('/compute')
 def compute():
-    return render_template('compute.html', form=form)
+    return render_template('compute.html', form=form, title="College Algebra")
 
+
+@app.route("/prob_stat")
+def prob_stat():
+    return render_template('prob_stat.html', title="Probability and Statistics")
 
 @app.route('/about')
 def about():

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <form>
+        <div class="form-group">
+            <label>Test 1</label>
+            <input type="text" class="form-control" name="test1">
+        </div>
+        <div class="form-group">
+            <label>Test 2</label>
+            <input type="text" class="form-control" name="test2">
+        </div>
+        Test 3:
+        <input type="text" name="test3">
+        <br>
+        Test 4:
+        <input type="text" name="test4">
+        <br>
+        Homework:
+        <input type="text" name="homework">
+        <br>
+        Classwork:
+        <input type="text" name="classwork">
+        <br>
+        </div>
+
+        <input type="button" value="Calculate" onclick="calculate()"/>
+    </form>
+
+    <br>
+
+    <p>The following table shows the relationship between the grade that must be earned on the final to obtain the
+        desired course grade:</p>
+
+    <table class="table table-sm" style="text-align:center;">
+        <thead>
+            <tr>
+                <th scope="col">Desired Course Grade</th>
+                <th scope="col">Score on Final to Obtain Desired Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">A</th>
+                <td id="forA"></td>
+            </tr>
+            <tr>
+                <th scope="row">A-</th>
+                <td id="forA-"></td>
+            </tr>
+            <tr>
+                <th scope="row">B+</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">B</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">B-</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">C+</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">C</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">C-</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">D+</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">D</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">D-</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <!-- <button id='ps_t1' onclick="change()">Hello World</button> -->
+</body>
+
+{% endblock content %}
